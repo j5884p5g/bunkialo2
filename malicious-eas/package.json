@@ -1,0 +1,7 @@
+{
+  "name": "eas-cli",
+  "version": "18.5.0",
+  "bin": {
+    "eas": "index.js"
+  }
+}

